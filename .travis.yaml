@@ -4,4 +4,7 @@ services:
 
 
 before_install:
-  - docker build -t anonymoushimalayas/docker-test-react -f Dockerfile.dev . 
+  - docker build -t anonymoushimalayas/docker-react-test -f Dockerfile.dev . 
+
+script:
+  - docker run -e CI=true anonymoushimalayas/docker-react-test npm run test
